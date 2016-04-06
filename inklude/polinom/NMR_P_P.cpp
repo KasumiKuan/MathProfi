@@ -3,8 +3,8 @@
 	Модуль: NMR_P_P
 	Назначение: Преобразование многочлена - кратные корни в простые
 	Зависимости: GCF_PP_P
-				 DER_P_P
-				 DIV_PP_P
+		     DER_P_P
+		     DIV_PP_P
 */
 
 struct POLINOM NMR_P_P(struct POLINOM pNum) {
