@@ -1,20 +1,20 @@
 /*
-	Криворучко Никита 5305
-	Модуль: RED_Q_Q
-	Назначение: Сокращение дроби
-	Зависимости: GCF_NN_N
-				 DIV_ZZ_Z
-				 ABS_Z_N
+	РљСЂРёРІРѕСЂСѓС‡РєРѕ РќРёРєРёС‚Р° 5305
+	РњРѕРґСѓР»СЊ: RED_Q_Q
+	РќР°Р·РЅР°С‡РµРЅРёРµ: РЎРѕРєСЂР°С‰РµРЅРёРµ РґСЂРѕР±Рё
+	Р—Р°РІРёСЃРёРјРѕСЃС‚Рё: GCF_NN_N
+		     DIV_ZZ_Z
+		     ABS_Z_N
 */
 
 struct RACIONAL RED_Q_Q(struct RACIONAL rNum) {
-	struct RACIONAL rez; // Возращаемое значение
-	struct NATURAL NOD;	// НОД чисел
+	struct RACIONAL rez; // Р’РѕР·СЂР°С‰Р°РµРјРѕРµ Р·РЅР°С‡РµРЅРёРµ
+	struct NATURAL NOD; // РќРћР” С‡РёСЃРµР»
 	
-	NOD = GCF_NN_N(rNum.numerator, rNum.denominator); // Нахождение НОД
-	rez.numerator = DIV_ZZ_Z(ABS_Z_N(rNum.numerator), NOD); // Сокращаем модуль числителя на НОД
-	rez.denominator = DIV_ZZ_Z(ABS_Z_N(rNum.denominator), NOD);	// Сокращаем модуль знаменателя на НОД
-	rez.token = rNum.token;	//сохраним знак
+	NOD = GCF_NN_N(rNum.numerator, rNum.denominator); // РќР°С…РѕР¶РґРµРЅРёРµ РќРћР”
+	rez.numerator = DIV_ZZ_Z(ABS_Z_N(rNum.numerator), NOD); // РЎРѕРєСЂР°С‰Р°РµРј РјРѕРґСѓР»СЊ С‡РёСЃР»РёС‚РµР»СЏ РЅР° РќРћР”
+	rez.denominator = DIV_ZZ_Z(ABS_Z_N(rNum.denominator), NOD); // РЎРѕРєСЂР°С‰Р°РµРј РјРѕРґСѓР»СЊ Р·РЅР°РјРµРЅР°С‚РµР»СЏ РЅР° РќРћР”
+	rez.token = rNum.token;	// CРѕС…СЂР°РЅРёРј Р·РЅР°Рє
 	
 	return rez;
 }
