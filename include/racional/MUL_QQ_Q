@@ -1,0 +1,14 @@
+/*
+	Ефимова Юлия 5305
+	Модуль: MUL_QQ_Q
+	Назначение: умножение дробей
+	Зависимости: MUL_ZZ_Z
+*/
+struct RATIONAL MUL_QQ_Q(struct RATIONAL q1, struct RATIONAL q2)
+{
+	struct RATIONAL c;
+	q.numerator = MUL_ZZ_Z(q1.numerator, q2.numerator); 		//перемножение числителей
+	q.denominator = MUL_ZZ_Z(q1.denominator, q2.denominator);	//перемножение знаменателей
+  	q.sign = (q1.sign == q2.sign) ? 0 : 1;				//знак дроби
+	return q;
+}
