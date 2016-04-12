@@ -1,0 +1,22 @@
+/*
+	Ефимова Юлия 5305
+	Модуль: TRAN_Z_Q
+	Назначение: Преобразование целого в дробное
+	Зависимости: отсутствуют
+*/
+struct RATIONAL TRAN_Z_Q(struct INTEGER z)
+{
+	int i = 0; 			//счетчик
+	struct RATIONAL q; 		//возвращаемая дробь
+	q.numerator.number = NULL;
+	q.denominator.number = NULL;
+	q.numerator.index = z.index;	//старший разряд числителя
+	q.numerator.number = (int*)realloc(q.numerator.number, q.numerator.index*sizeof(int));
+	for (i = 0; i < z.index; i++)
+		q.numerator.number[i] = z.number[i];	//запись числителя
+	q.denominator.index = 1;		//старший разряд знаменателя 
+	q.denominator.number = (int*)realloc(q.denominator.number, 1*sizeof(int));
+	q.denominator.number[0] = 1;	//знаменатель равен 1
+	q.sign = z.sign;		//знак равен знаку числа z
+	return q;
+}
